@@ -120,7 +120,26 @@ Once seeded, you can test different role perspectives:
 
 ---
 
-## 🌐 Deploying to Render
+## ⚡ Deploying Everything on Vercel (Unified Monorepo)
+
+The repository is already configured with Serverless API functions and Vercel routing rewrites:
+
+1. Import your GitHub repository into [Vercel](https://vercel.com).
+2. Keep the default settings:
+   - **Framework Preset**: `Other`
+   - **Root Directory**: `./` (leave default)
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `client/dist`
+3. Add the following **Environment Variables**:
+   - `MONGO_URI`: `mongodb+srv://...` (Your MongoDB Atlas connection URI)
+   - `JWT_SECRET`: *Your JWT Secret*
+   - `JWT_EXPIRE`: `30d`
+   - `CLOUDINARY_CLOUD_NAME`: `dkwlzcbha`
+   - `CLOUDINARY_API_KEY`: `835179794795973`
+   - `CLOUDINARY_API_SECRET`: `BvubRzsZsgOhZv--8UBtBzzs3Lc`
+4. Click **Deploy**. Your frontend and serverless API will both be live under the same domain!
+
+---
 
 ### Backend (Web Service)
 1. In Render Dashboard, click **New +** → **Web Service**.

@@ -6,11 +6,22 @@
     "dev": "concurrently -n \"SERVER,CLIENT\" -c \"blue,green\" \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "npm --prefix server run dev",
     "dev:client": "npm --prefix client run dev",
-    "start": "npm --prefix server start",
-    "build": "npm --prefix client run build",
+    "start": "node server/server.js",
+    "build": "npm --prefix client install --no-save && npm --prefix client run build",
+    "vercel-build": "npm --prefix client install --no-save && npm --prefix client run build",
     "seed": "npm --prefix server run seed",
     "clean": "npm --prefix server run clean",
     "install:all": "npm install && npm --prefix server install && npm --prefix client install"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^2.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.1",
+    "multer": "^1.4.5-lts.1"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
